@@ -1,3 +1,41 @@
-git add archivo
-git commit -m "comentario"
-git push
+package clase1jorgezapata;
+
+import java.util.Scanner;
+
+public class Clase1JorgeZapata {
+   
+  
+    public static void main(String[] args) {
+      int Di;
+      int Me;
+      int Añ;
+      
+       Scanner scanner = new Scanner(System.in);
+    
+       
+        try {
+        System.out.println("Ingrese el dia: ");
+        Di = scanner.nextInt();
+        System.out.println("Ingrese el mes: ");
+        Me = scanner.nextInt();
+        System.out.println("Ingrese el año: ");
+        Añ = scanner.nextInt();
+        
+            if (0 <= Di && Di <= 31 && Me != 2 && 0 <= Me  && Me <= 12 && 0 <= Añ && Añ % 4 != 0) {
+                System.out.println(String.format("Formato valido"));
+            } else if (Me == 2 && 0 <= Di && Di <= 28 && 0 <= Añ && Añ % 4 != 0) {
+                  System.out.println(String.format("Formato valido"));
+            } 
+                  else if (Me == 2 && 0 <= Di && Di <= 29 && 0 <= Añ && Añ % 4 == 0) {
+                     System.out.println(String.format("Formato valido"));
+            } else {
+                   System.out.println(String.format("Formato invalido"));
+                  }
+                    
+    }catch (Exception e) {
+            System.out.println("Formato invalido");
+            e.printStackTrace();
+        }
+    
+   }
+}
